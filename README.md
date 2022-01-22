@@ -7,4 +7,4 @@ in [ICU](http://icu-project.org/)'s implementation.
 
 ## Documentation and Usage
 
-See [pkgdoc](http://pkg.go.dev/github.com/bailbuild/chardet)
+See [pkgdoc](http://pkg.go.dev/github.com/baulk/chardet)
