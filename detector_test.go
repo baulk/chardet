@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/balibuild/chardet"
+	"github.com/baulk/chardet"
 )
 
 func TestDetector(t *testing.T) {

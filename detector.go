@@ -80,7 +80,7 @@ func NewHtmlDetector() *Detector {
 }
 
 var (
-	NotDetectedError = errors.New("Charset not detected.")
+	ErrNotDetected = errors.New("charset not detected")
 )
 
 // DetectBest returns the Result with highest Confidence.
@@ -98,7 +98,7 @@ func (d *Detector) DetectBest(b []byte) (r *Result, err error) {
 		}
 	}
 	if output.Confidence == 0 {
-		return nil, NotDetectedError
+		return nil, ErrNotDetected
 	}
 	return &output, nil
 }
@@ -118,7 +118,7 @@ func (d *Detector) DetectAll(b []byte) ([]Result, error) {
 		}
 	}
 	if len(outputs) == 0 {
-		return nil, NotDetectedError
+		return nil, ErrNotDetected
 	}
 
 	sort.Sort(outputs)
@@ -131,7 +131,7 @@ func (d *Detector) DetectAll(b []byte) ([]Result, error) {
 		}
 	}
 	if len(dedupOutputs) == 0 {
-		return nil, NotDetectedError
+		return nil, ErrNotDetected
 	}
 	return dedupOutputs, nil
 }
